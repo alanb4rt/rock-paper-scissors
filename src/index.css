@@ -20,6 +20,7 @@
   font-family: "Barlow Semi Condensed", sans-serif;
   line-height: 1.5;
   font-weight: 600;
+  color: white;
 
   /* Colors */
   --scissors-gradient: linear-gradient(hsl(39 89% 49%), hsl(40, 84%, 53%));
@@ -27,7 +28,7 @@
   --rock-gradient: linear-gradient(hsl(349 71% 52%), hsl(349 70% 56%));
   --lizard-gradient: linear-gradient(hsl(261 73% 60%), hsl(261 72% 63%));
   --spock-gradient: linear-gradient(hsl(189 59% 53%), hsl(189 58% 57%));
-  --radial-gradient: radial-gradient(hsl(214 47% 23%), hsl(237 49% 15%));
+  --bg-radial-gradient: radial-gradient(hsl(214 47% 23%), hsl(237 49% 15%));
 
   --text: hsl(229 25% 31%);
   --text-score: hsl(229 64% 46%);
@@ -39,4 +40,6 @@ body {
   padding: 0;
   min-width: 320px;
   min-height: 100vh;
+
+  background: var(--bg-radial-gradient);
 }
