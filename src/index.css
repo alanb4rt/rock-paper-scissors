@@ -43,3 +43,10 @@ body {
 
   background: var(--bg-radial-gradient);
 }
+
+.game-area {
+  background: url("./assets/images/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+}
