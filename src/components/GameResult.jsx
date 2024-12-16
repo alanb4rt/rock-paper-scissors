@@ -6,7 +6,7 @@ export default function GameResult() {
       <div className="relative flex items-stretch justify-center gap-16">
         <article className="text-center">
           <h2 className="text-2xl uppercase mb-6">You picked</h2>
-          <GameButton choice="paper" color="var(--paper-gradient)" />
+          <GameButton choice="paper" />
         </article>
         <article className="text-center">
           <h2 className="text-2xl uppercase mb-6">The house picked</h2>

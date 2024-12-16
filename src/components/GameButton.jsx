@@ -1,8 +1,16 @@
-export default function GameButton({ choice, color }) {
+const choices = {
+  rock: "var(--rock-gradient)",
+  scissors: "var(--scissors-gradient)",
+  paper: "var(--paper-gradient)",
+};
+
+export default function GameButton({ choice }) {
+  const btnColor = choices[choice];
+
   return (
     <button
       className="relative mx-auto p-5 rounded-full"
-      style={{ background: color }}
+      style={{ background: btnColor }}
     >
       <div className="grid place-content-center bg-white p-8 rounded-full">
         <img
