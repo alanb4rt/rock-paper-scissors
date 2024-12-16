@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Game from "./components/Game";
+import GameBoard from "./components/GameBoard";
 import Header from "./components/Header";
 import RulesModal from "./components/RulesModal";
 
@@ -9,7 +9,7 @@ export default function App() {
   return (
     <>
       <Header />
-      <Game />
+      <GameBoard />
       <button
         className="fixed bottom-8 right-8 bg-transparent border border-white rounded-lg px-8 py-2 tracking-widest uppercase"
         onClick={() => setShowRules(true)}

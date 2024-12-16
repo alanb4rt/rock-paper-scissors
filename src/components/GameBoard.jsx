@@ -1,6 +1,6 @@
 import GameButton from "./GameButton";
 
-export default function Game() {
+export default function GameBoard() {
   return (
     <section>
       <div className="relative max-w-[28rem] mx-auto">
