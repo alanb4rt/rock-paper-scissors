@@ -1,5 +1,6 @@
 import { useState } from "react";
 import GameStart from "./GameStart";
+import GameResult from "./GameResult";
 
 export default function GameBoard() {
   const [playerChoice, setPlayerChoice] = useState("");
@@ -11,7 +12,14 @@ export default function GameBoard() {
 
   return (
     <>
-      <GameStart handleChoice={handleChoice} />
+      {playerChoice === "" ? (
+        <GameStart handleChoice={handleChoice} />
+      ) : (
+        <GameResult
+          playerChoice={playerChoice}
+          setPlayerChoice={setPlayerChoice}
+        />
+      )}
     </>
   );
 }
