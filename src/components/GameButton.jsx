@@ -4,13 +4,14 @@ const choices = {
   paper: "var(--paper-gradient)",
 };
 
-export default function GameButton({ choice }) {
+export default function GameButton({ choice, handleChoice }) {
   const btnColor = choices[choice];
 
   return (
     <button
       className="relative mx-auto p-5 rounded-full"
       style={{ background: btnColor }}
+      onClick={() => handleChoice(choice)}
     >
       <div className="grid place-content-center bg-white p-8 rounded-full">
         <img

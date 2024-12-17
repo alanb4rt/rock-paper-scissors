@@ -1,15 +1,17 @@
-import GameButton from "./GameButton";
+import { useState } from "react";
+import GameStart from "./GameStart";
 
 export default function GameBoard() {
+  const [playerChoice, setPlayerChoice] = useState("");
+
+  const handleChoice = (choice) => {
+    console.log(choice);
+    setPlayerChoice(choice);
+  };
+
   return (
-    <section>
-      <div className="relative max-w-[28rem] mx-auto">
-        <div className="game-area flex items-center justify-between gap-6 flex-wrap">
-          <GameButton choice="paper" />
-          <GameButton choice="scissors" />
-          <GameButton choice="rock" />
-        </div>
-      </div>
-    </section>
+    <>
+      <GameStart handleChoice={handleChoice} />
+    </>
   );
 }
