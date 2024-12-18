@@ -11,7 +11,7 @@ export default function GameButton({ choice, handleChoice }) {
     <button
       className="relative mx-auto p-5 rounded-full"
       style={{ background: btnColor }}
-      onClick={() => handleChoice(choice)}
+      onClick={handleChoice ? () => handleChoice(choice) : undefined}
     >
       <div className="grid place-content-center bg-white p-8 rounded-full">
         <img
