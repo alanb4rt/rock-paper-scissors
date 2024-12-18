@@ -1,12 +1,16 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import GameButton from "./GameButton";
+import { ScoreContext } from "../contexts/ScoreProvider";
 import { getGameResult } from "../utils/getGameResult";
+import { updateScore } from "../utils/updateScore";
 
 const choices = ["rock", "paper", "scissors"];
 
 export default function GameResult({ playerChoice, setPlayerChoice }) {
   const [houseChoice, setHouseChoice] = useState("");
   const [result, setResult] = useState("");
+
+  const { score, setScore } = useContext(ScoreContext);
 
   useEffect(() => {
     setTimeout(() => {
@@ -29,6 +33,7 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
 
     const gameResult = getGameResult(playerChoice, houseChoice);
     setResult(gameResult);
+    updateScore(gameResult, setScore);
   }, [houseChoice]);
 
   return (
