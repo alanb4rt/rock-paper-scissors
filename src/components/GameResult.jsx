@@ -10,14 +10,7 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
   const [houseChoice, setHouseChoice] = useState("");
   const [result, setResult] = useState("");
 
-  const { score, setScore } = useContext(ScoreContext);
-
-  useEffect(() => {
-    setTimeout(() => {
-      const randomChoice = Math.floor(Math.random() * choices.length);
-      setHouseChoice(choices[randomChoice]);
-    }, 2000);
-  }, []);
+  const { setScore } = useContext(ScoreContext);
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
