@@ -4,12 +4,14 @@ const choices = {
   paper: "var(--paper-gradient)",
 };
 
-export default function GameButton({ choice, handleChoice }) {
+export default function GameButton({ choice, handleChoice, isWinner }) {
   const btnColor = choices[choice];
 
   return (
     <button
-      className="relative mx-auto p-5 rounded-full"
+      className={`relative mx-auto p-5 rounded-full ${
+        isWinner ? "winner" : ""
+      }`}
       style={{ background: btnColor }}
       onClick={handleChoice ? () => handleChoice(choice) : undefined}
     >

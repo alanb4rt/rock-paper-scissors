@@ -34,7 +34,7 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
       <div className="relative flex items-stretch justify-center gap-16">
         <article className="text-center">
           <h2 className="text-2xl uppercase mb-6">You picked</h2>
-          <GameButton choice={playerChoice} />
+          <GameButton choice={playerChoice} isWinner={result === "You win"} />
         </article>
         {result !== "" && (
           <article className="self-center text-center">
@@ -52,7 +52,7 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
           {houseChoice === "" ? (
             <div className="animate-pulse size-32 mx-auto translate-y-4 bg-black/25 rounded-full"></div>
           ) : (
-            <GameButton choice={houseChoice} />
+            <GameButton choice={houseChoice} isWinner={result === "You lose"} />
           )}
         </article>
       </div>

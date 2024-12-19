@@ -50,3 +50,12 @@ body {
   background-position: center;
   background-size: 50%;
 }
+
+.winner {
+  --size: 40px;
+  --color: rgba(255, 255, 255, 0.02);
+
+  box-shadow: 0 0 0 calc(var(--size) * 1) var(--color),
+    0 0 0 calc(var(--size) * 2.2) var(--color),
+    0 0 0 calc(var(--size) * 3.4) var(--color);
+}
