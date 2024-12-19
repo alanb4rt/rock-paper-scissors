@@ -24,9 +24,13 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
   useEffect(() => {
     if (houseChoice === "") return;
 
-    const gameResult = getGameResult(playerChoice, houseChoice);
-    setResult(gameResult);
-    updateScore(gameResult, setScore);
+    const timeoutId = setTimeout(() => {
+      const gameResult = getGameResult(playerChoice, houseChoice);
+      setResult(gameResult);
+      updateScore(gameResult, setScore);
+    }, 1000);
+
+    return () => clearTimeout(timeoutId);
   }, [houseChoice]);
 
   return (
