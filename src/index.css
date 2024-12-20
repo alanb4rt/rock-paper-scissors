@@ -51,7 +51,35 @@ body {
   background-size: 50%;
 }
 
-.winner {
+.token {
+  --shadow-offsets: 0 8px 0;
+
+  position: relative;
+  padding: 1.25rem;
+  border-radius: 50%;
+}
+
+.token-rock {
+  background: var(--rock-gradient);
+  box-shadow: var(--shadow-offsets) hsl(345 65 40);
+}
+
+.token-paper {
+  background: var(--paper-gradient);
+  box-shadow: var(--shadow-offsets) hsl(230 65 50);
+}
+
+.token-scissors {
+  background: var(--scissors-gradient);
+  box-shadow: var(--shadow-offsets) hsl(30 65 45);
+}
+
+.winner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+
   --size: 40px;
   --color: rgba(255, 255, 255, 0.02);
 
