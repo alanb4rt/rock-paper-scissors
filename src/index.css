@@ -87,3 +87,13 @@ body {
     0 0 0 calc(var(--size) * 2.2) var(--color),
     0 0 0 calc(var(--size) * 3.4) var(--color);
 }
+
+/* Responsive */
+
+@media screen and (width < 640px) {
+  .token {
+    --shadow-offsets: 0 6px 0;
+
+    padding: 1rem;
+  }
+}
