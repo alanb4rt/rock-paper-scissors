@@ -3,15 +3,19 @@ import rulesImage from "../assets/images/image-rules.svg";
 
 export default function RulesModal({ onClose }) {
   return (
-    <section className="fixed inset-0 grid place-content-center bg-black/50">
-      <article className="relative p-8 bg-white text-[var(--text)] rounded-lg">
-        <header className="flex items-center justify-between gap-4 mb-8">
-          <h2 className="text-3xl font-bold uppercase leading-none">Rules</h2>
-          <button type="button" onClick={onClose}>
-            <img src={iconClose} alt="Close icon" />
-          </button>
-        </header>
+    <section className="fixed inset-0 grid sm:place-content-center bg-black/50">
+      <article className="relative flex flex-col justify-between items-center gap-4 sm:block py-16 px-8 sm:p-8 bg-white text-[var(--text)] sm:rounded-lg">
+        <h2 className="text-center sm:text-left mt-8 sm:mt-0 sm:mb-4 text-3xl font-bold uppercase leading-none">
+          Rules
+        </h2>
         <img className="w-full p-4" src={rulesImage} alt="Game rules" />
+        <button
+          className="sm:absolute top-[2rem] right-[2rem] m-1"
+          type="button"
+          onClick={onClose}
+        >
+          <img src={iconClose} alt="Close icon" />
+        </button>
       </article>
     </section>
   );
