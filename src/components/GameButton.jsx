@@ -1,7 +1,7 @@
 export default function GameButton({ choice, handleChoice, isWinner }) {
   return (
     <button
-      className="mx-auto rounded-full shadow-xl"
+      className="mx-auto rounded-full shadow-xl last:col-span-2"
       onClick={handleChoice ? () => handleChoice(choice) : undefined}
     >
       <div className={`token token-${choice} ${isWinner ? "winner" : ""}`}>
