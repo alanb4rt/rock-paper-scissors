@@ -14,7 +14,7 @@ export default function App() {
         <GameBoard />
       </ScoreProvider>
       <button
-        className="fixed bottom-8 right-8 bg-transparent border border-white rounded-lg px-8 py-2 tracking-widest uppercase"
+        className="fixed bottom-8 left-8 sm:left-auto right-8 w-fit mx-auto border border-white rounded-lg px-8 py-2 tracking-widest uppercase"
         onClick={() => setShowRules(true)}
       >
         Rules
