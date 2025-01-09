@@ -41,12 +41,11 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
             result !== "" ? "sm:grid-cols-[1fr,auto,1fr]" : ""
           }`}
         >
-          <article className="justify-self-end text-center">
-            <h2 className="text-2xl uppercase mb-6">You picked</h2>
+          <article className="inline-flex flex-col sm:flex-col-reverse gap-6 sm:justify-self-end text-center">
             <GameButton choice={playerChoice} isWinner={result === "You win"} />
+            <h2 className="sm:text-2xl uppercase">You picked</h2>
           </article>
-          <article className="justify-self-start text-center sm:order-last">
-            <h2 className="text-2xl uppercase mb-6">The house picked</h2>
+          <article className="inline-flex flex-col sm:flex-col-reverse gap-6 sm:justify-self-start text-center sm:order-last">
             {houseChoice === "" ? (
               <div className="animate-pulse size-32 mx-auto translate-y-4 bg-black/25 rounded-full"></div>
             ) : (
@@ -55,6 +54,7 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
                 isWinner={result === "You lose"}
               />
             )}
+            <h2 className="sm:text-2xl uppercase">The house picked</h2>
           </article>
           {result !== "" && (
             <article className="col-span-2 sm:col-auto self-center text-center">
