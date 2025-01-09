@@ -2,7 +2,7 @@ import GameButton from "./GameButton";
 
 export default function GameStart({ handleChoice }) {
   return (
-    <section>
+    <>
       <div className="relative max-w-[22rem] sm:max-w-[28rem] mx-auto">
         <div className="game-area grid grid-cols-2 gap-6">
           <GameButton choice="paper" handleChoice={handleChoice} />
@@ -10,6 +10,6 @@ export default function GameStart({ handleChoice }) {
           <GameButton choice="rock" handleChoice={handleChoice} />
         </div>
       </div>
-    </section>
+    </>
   );
 }

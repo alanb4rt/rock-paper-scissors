@@ -34,7 +34,7 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
   }, [houseChoice]);
 
   return (
-    <section>
+    <>
       <div className="max-w-screen-lg mx-auto">
         <div
           className={`relative grid grid-cols-2 grid-rows-2 sm:grid-rows-1 gap-x-8 sm:gap-x-16 ${
@@ -69,6 +69,6 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
           )}
         </div>
       </div>
-    </section>
+    </>
   );
 }

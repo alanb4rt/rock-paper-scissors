@@ -11,7 +11,7 @@ export default function GameBoard() {
   };
 
   return (
-    <>
+    <section>
       {playerChoice === "" ? (
         <GameStart handleChoice={handleChoice} />
       ) : (
@@ -20,6 +20,6 @@ export default function GameBoard() {
           setPlayerChoice={setPlayerChoice}
         />
       )}
-    </>
+    </section>
   );
 }
