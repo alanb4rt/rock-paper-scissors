@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import GameButton from "./GameButton";
+import GameButtonSkeleton from "./GameButtonSkeleton";
 import { ScoreContext } from "../contexts/ScoreProvider";
 import { getGameResult } from "../utils/getGameResult";
 import { updateScore } from "../utils/updateScore";
@@ -41,13 +42,13 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
             result !== "" ? "sm:grid-cols-[1fr,auto,1fr]" : ""
           }`}
         >
-          <article className="inline-flex flex-col sm:flex-col-reverse gap-6 sm:justify-self-end text-center">
+          <article className="inline-flex flex-col items-center justify-between sm:flex-col-reverse gap-6 sm:justify-self-end text-center">
             <GameButton choice={playerChoice} isWinner={result === "You win"} />
             <h2 className="sm:text-2xl uppercase">You picked</h2>
           </article>
-          <article className="inline-flex flex-col sm:flex-col-reverse gap-6 sm:justify-self-start text-center sm:order-last">
+          <article className="inline-flex flex-col items-center justify-between sm:flex-col-reverse gap-6 sm:justify-self-start text-center sm:order-last">
             {houseChoice === "" ? (
-              <div className="animate-pulse size-32 mx-auto translate-y-4 bg-black/25 rounded-full"></div>
+              <GameButtonSkeleton />
             ) : (
               <GameButton
                 choice={houseChoice}
