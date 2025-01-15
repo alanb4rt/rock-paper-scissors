@@ -1,0 +1,1 @@
+export const NORMAL_CHOICES = ['rock', 'paper', 'scissors'];

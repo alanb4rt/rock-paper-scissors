@@ -4,8 +4,7 @@ import GameButtonSkeleton from "./GameButtonSkeleton";
 import { ScoreContext } from "../contexts/ScoreProvider";
 import { getGameResult } from "../utils/getGameResult";
 import { updateScore } from "../utils/updateScore";
-
-const choices = ["rock", "paper", "scissors"];
+import { NORMAL_CHOICES } from "../data/choices";
 
 export default function GameResult({ playerChoice, setPlayerChoice }) {
   const [houseChoice, setHouseChoice] = useState("");
@@ -15,8 +14,8 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
 
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      const randomIndex = Math.floor(Math.random() * choices.length);
-      setHouseChoice(choices[randomIndex]);
+      const randomIndex = Math.floor(Math.random() * NORMAL_CHOICES.length);
+      setHouseChoice(NORMAL_CHOICES[randomIndex]);
     }, 2000);
 
     return () => clearTimeout(timeoutId);
