@@ -37,15 +37,17 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
     <>
       <div className="max-w-screen-lg mx-auto">
         <div
-          className={`relative grid grid-cols-2 grid-rows-2 sm:grid-rows-1 gap-x-8 sm:gap-x-16 ${
+          className={`game-result relative grid grid-cols-2 grid-rows-2 sm:grid-rows-1 gap-x-8 sm:gap-x-16 ${
             result !== "" ? "sm:grid-cols-[1fr,auto,1fr]" : ""
           }`}
         >
-          <article className="inline-flex flex-col items-center justify-between sm:flex-col-reverse gap-6 sm:justify-self-end text-center">
+          <article className="card sm:justify-self-end">
             <GameButton choice={playerChoice} isWinner={result === "You win"} />
-            <h2 className="sm:text-2xl uppercase">You picked</h2>
+            <h2 className="sm:text-2xl uppercase tracking-widest">
+              You picked
+            </h2>
           </article>
-          <article className="inline-flex flex-col items-center justify-between sm:flex-col-reverse gap-6 sm:justify-self-start text-center sm:order-last">
+          <article className="card sm:justify-self-start sm:order-last">
             {houseChoice === "" ? (
               <GameButtonSkeleton />
             ) : (
@@ -54,7 +56,9 @@ export default function GameResult({ playerChoice, setPlayerChoice }) {
                 isWinner={result === "You lose"}
               />
             )}
-            <h2 className="sm:text-2xl uppercase">The house picked</h2>
+            <h2 className="sm:text-2xl uppercase tracking-widest">
+              The house picked
+            </h2>
           </article>
           {result !== "" && (
             <article className="col-span-2 sm:col-auto self-center text-center">

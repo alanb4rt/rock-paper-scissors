@@ -74,6 +74,18 @@ body {
   box-shadow: var(--shadow-offsets) hsl(30 65 45);
 }
 
+.game-result .token {
+  zoom: 1.5;
+}
+
+.card {
+  display: inline-flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+}
+
 .winner::before {
   content: "";
   position: absolute;
@@ -95,5 +107,15 @@ body {
     --shadow-offsets: 0 6px 0;
 
     padding: 1rem;
+    zoom: 1 !important;
+  }
+
+  .card {
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .winner::before {
+    --size: 24px;
   }
 }
