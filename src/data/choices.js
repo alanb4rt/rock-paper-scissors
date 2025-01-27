@@ -1,1 +1,1 @@
-export const NORMAL_CHOICES = ['rock', 'paper', 'scissors'];
+export const NORMAL_CHOICES = ['paper', 'scissors', 'rock'];
