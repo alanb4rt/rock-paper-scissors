@@ -1,21 +1,21 @@
 import { useState } from "react";
 import GameStart from "./GameStart";
-import GameResult from "./GameResult";
+import GameResultBoard from "./GameResultBoard";
+import { GameChoice } from "../types/game.types";
 
 export default function GameBoard() {
-  const [playerChoice, setPlayerChoice] = useState("");
+  const [playerChoice, setPlayerChoice] = useState<GameChoice | null>(null);
 
-  const handleChoice = (choice) => {
-    console.log(choice);
+  const handleChoice = (choice: GameChoice) => {
     setPlayerChoice(choice);
   };
 
   return (
     <section>
-      {playerChoice === "" ? (
+      {!playerChoice ? (
         <GameStart handleChoice={handleChoice} />
       ) : (
-        <GameResult
+        <GameResultBoard
           playerChoice={playerChoice}
           setPlayerChoice={setPlayerChoice}
         />

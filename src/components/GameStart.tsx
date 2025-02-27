@@ -1,7 +1,12 @@
 import GameButton from "./GameButton";
 import { NORMAL_CHOICES } from "../data/choices";
+import { GameChoice } from "../types/game.types";
 
-export default function GameStart({ handleChoice }) {
+interface GameStartProps {
+  handleChoice: (choice: GameChoice) => void
+}
+
+export default function GameStart({ handleChoice }: GameStartProps) {
   return (
     <>
       <div className="relative max-w-[22rem] sm:max-w-[28rem] mx-auto">
