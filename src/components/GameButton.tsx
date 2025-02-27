@@ -1,6 +1,13 @@
+import { GameChoice } from "../types/game.types";
 import { getImageURL } from "../utils/getImageURL";
 
-export default function GameButton({ choice, handleChoice, isWinner }) {
+interface GameButtonProps {
+  choice: GameChoice,
+  handleChoice?: (choice: GameChoice) => void,
+  isWinner?: boolean
+}
+
+export default function GameButton({ choice, handleChoice, isWinner }: GameButtonProps) {
   const imgURL = getImageURL(`icon-${choice}.svg`);
 
   return (

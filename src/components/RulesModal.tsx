@@ -1,7 +1,11 @@
 import iconClose from "../assets/images/icon-close.svg";
 import rulesImage from "../assets/images/image-rules.svg";
 
-export default function RulesModal({ onClose }) {
+interface RulesModalProps {
+  onClose: () => void
+}
+
+export default function RulesModal({ onClose }: RulesModalProps) {
   return (
     <section className="fixed inset-0 grid sm:place-content-center bg-black/50">
       <article className="relative flex flex-col justify-between items-center gap-4 sm:block py-16 px-8 sm:p-8 bg-white text-[var(--text)] sm:rounded-lg">
